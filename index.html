@@ -16,7 +16,6 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            text-align: center;
         }
 
         .content {
@@ -62,23 +61,7 @@
             100% { opacity: 1; }
         }
 
-        /* Styling for the spider video */
-        .spider-video {
-            position: absolute;
-            bottom: 0;
-            left: -150px;
-            width: 150px;
-            height: auto;
-            animation: moveSpider 10s linear infinite;
-            opacity: 0.6;
-        }
-
-        @keyframes moveSpider {
-            0% { left: -150px; }
-            100% { left: 100vw; }
-        }
-
-        /* Styling for the clown GIF */
+        /* Styling for the clown video */
         .clown-video {
             position: absolute;
             bottom: 0;
@@ -88,67 +71,17 @@
             opacity: 0.6;
         }
 
-        /* Styling for the spider corner video */
-        .spider_corner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: auto;
-            opacity: 0.6;
-        }
-
-        /* Responsive design for smaller screens */
-        @media only screen and (max-width: 768px) {
-            h1 {
-                font-size: 2.5em; /* Smaller text for mobile */
-            }
-
-            p {
-                font-size: 1em; /* Smaller subtitle on mobile */
-            }
-
-            /* Resize the clown gif on mobile */
-            .clown-video {
-                width: 80%; /* Adjust to 80% of the screen width */
-                height: auto; /* Maintain aspect ratio */
-            }
-
-            /* Resize the spider video on mobile */
-            .spider-video {
-                width: 80px; /* Smaller size for the spider video */
-                height: auto;
-            }
-
-            /* Resize spider corner video */
-            .spider_corner {
-                width: 100px; /* Smaller size for the corner spider video */
-                height: auto;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="content">
         <h1 id="title-text">Halloween Party!</h1>
-        <p id="subtitle-text">The 31st, secret place</p>
+        <p id="subtitle-text"> The 31st, secret place</p>
     </div>
 
-    <!-- MP4 video for spider, set to autoplay and loop -->
-    <video class="spider-video" id="spider-video" autoplay muted loop>
-        <source src="spider.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Clown GIF -->
+    <!-- MP4 video for clown, set to autoplay and loop -->
     <img class="clown-video" id="clown-video" src="clown-unscreen.gif" alt="Funny Clown GIF">
-
-    <!-- MP4 video for spider in the top left corner, set to autoplay and loop -->
-    <video class="spider_corner" id="spider-corner" autoplay muted loop>
-        <source src="spider_top.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
     <script>
         // Start with scary theme
@@ -164,17 +97,16 @@
                 document.body.style.background = "url('Image.jpg') no-repeat center center fixed";
                 document.body.style.backgroundSize = "cover";
 
-                // Change text to something funny
+                // Change teƒclownxt to something funny
                 document.getElementById('title-text').innerText = "The 🕸️ Sluttiest 🕸️ Halloween";
                 document.getElementById('subtitle-text').innerText = "Come Slutty";
 
                 // Remove all the videos (spider, clown, etc.)
-                document.getElementById('spider-video').style.display = 'none';
                 document.getElementById('clown-video').style.display = 'none';
-                document.getElementById('spider-corner').style.display = 'none';
 
             }, 2000); // Flash for 2 seconds
-        }, 4000); // Start the happening after 5 seconds
+        }, 5000); // Start the happening after 5 seconds
     </script>
 </body>
 </html>
+
