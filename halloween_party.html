@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Party</title>
+    <style>
+        body {
+            background: url('ghost.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Creepster', cursive;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .content {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4em;
+            color: orange;
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Flash effect for the big reveal */
+        .flash {
+            animation: flashEffect 0.1s infinite;
+        }
+
+        @keyframes flashEffect {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Styling for the spider video */
+        .spider-video {
+            position: absolute;
+            bottom: 0;
+            left: -150px;
+            width: 150px;
+            height: auto;
+            animation: moveSpider 10s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes moveSpider {
+            0% { left: -150px; }
+            100% { left: 100vw; }
+        }
+
+        /* Styling for the clown video */
+        .clown-video {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 600px;
+            height: auto;
+            opacity: 0.6;
+        }
+
+        /* Styling for the spider corner video */
+        .spider_corner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: auto;
+            opacity: 0.6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1 id="title-text">Halloween Party!</h1>
+        <p id="subtitle-text"> The 31st, secret place</p>
+    </div>
+
+    <!-- MP4 video for spider, set to autoplay and loop -->
+    <video class="spider-video" id="spider-video" autoplay muted loop>
+        <source src="spider.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- MP4 video for clown, set to autoplay and loop -->
+    <img class="clown-video" id="clown-video" src="clown-unscreen.gif" alt="Funny Clown GIF">
+
+    <!-- MP4 video for spider in the top left corner, set to autoplay and loop -->
+    <video class="spider_corner" id="spider-corner" autoplay muted loop>
+        <source src="spider_top.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Start with scary theme
+        setTimeout(function() {
+            // Add flashing effect for suspense
+            document.body.classList.add('flash');
+
+            // After flashing for 2 seconds, change to funny theme and remove spiders and videos
+            setTimeout(function() {
+                document.body.classList.remove('flash');
+
+                // Change background to a funny one
+                document.body.style.background = "url('Image.jpg') no-repeat center center fixed";
+                document.body.style.backgroundSize = "cover";
+
+                // Change teƒclownxt to something funny
+                document.getElementById('title-text').innerText = "The 🕸️ Sluttiest 🕸️ Halloween";
+                document.getElementById('subtitle-text').innerText = "Come Slutty";
+
+                // Remove all the videos (spider, clown, etc.)
+                document.getElementById('spider-video').style.display = 'none';
+                document.getElementById('clown-video').style.display = 'none';
+                document.getElementById('spider-corner').style.display = 'none';
+
+            }, 2000); // Flash for 2 seconds
+        }, 5000); // Start the happening after 5 seconds
+    </script>
+</body>
+</html>
