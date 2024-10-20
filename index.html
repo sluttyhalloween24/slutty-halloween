@@ -25,12 +25,16 @@
         }
 
         h1 {
-            font-size: 4em;
+            font-size: 6em;
             color: orange;
             animation: flicker 1.5s infinite alternate;
         }
 
         p {
+            font-size: 2em;
+        }
+
+        c {
             font-size: 1.5em;
         }
 
@@ -76,8 +80,9 @@
 <body>
     <div class="overlay"></div>
     <div class="content">
-        <h1 id="title-text">Halloween Party!</h1>
-        <p id="subtitle-text"> The 31st, secret place</p>
+        <h1 id="title-text">Halloween Night</h1>
+        <p id="subtitle-text"> October 31st, Schneiderei Club</p>
+        <c id="subtitle-text"> By Lucie, Emma, Léo</c>
     </div>
 
     <!-- MP4 video for clown, set to autoplay and loop -->
@@ -98,8 +103,8 @@
                 document.body.style.backgroundSize = "cover";
 
                 // Change teƒclownxt to something funny
-                document.getElementById('title-text').innerText = "The 🕸️ Sluttiest 🕸️ Halloween";
-                document.getElementById('subtitle-text').innerText = "Come Slutty";
+                document.getElementById('title-text').innerText = "The \n 🕸️ Sluttiest 🕸️ \n Halloween";
+                document.getElementById('subtitle-text').innerText = "We're happy, if you come Slutty";
 
                 // Remove all the videos (spider, clown, etc.)
                 document.getElementById('clown-video').style.display = 'none';
@@ -109,4 +114,6 @@
     </script>
 </body>
 </html>
+
+
 
